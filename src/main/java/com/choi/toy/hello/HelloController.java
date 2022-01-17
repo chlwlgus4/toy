@@ -11,4 +11,8 @@ public class HelloController {
         return "helloWorld";
     }
 
+    @GetMapping("post")
+    public String post() {
+        return "post";
+    }
 }
