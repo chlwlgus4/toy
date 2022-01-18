@@ -23,6 +23,11 @@
 
     <!-- File Appender -->
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>debug</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
         <!-- 출력패턴 설정 -->
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
             <pattern>${FILE_LOG_PATTERN}</pattern>
@@ -69,6 +74,7 @@
             <maxHistory>60</maxHistory>
         </rollingPolicy>
     </appender>
+
 
     <!--  <root level="INFO">-->
     <root level="${LOG_LEVEL}">
